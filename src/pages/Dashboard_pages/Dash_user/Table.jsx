@@ -372,14 +372,6 @@ const TableData = ({ data }) => {
                           <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                         </svg>
                       </Link>
-                      {/* //password reset icon */}
-                      <div onClick={() => { handleIconsClick('reset', row.original._id) }}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className=" transition ease-out duration-200 cursor-pointer opacity-60 hover:opacity-100 feather feather-refresh-ccw">
-                          <polyline points="1 4 1 10 7 10"></polyline>
-                          <polyline points="23 20 23 14 17 14"></polyline>
-                          <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path>
-                        </svg>
-                      </div>
                       {/* //user delete icon */}
                       <div onClick={() => { handleIconsClick('delete', row.original._id) }}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className=" transition ease-out duration-200 cursor-pointer opacity-60 hover:opacity-100 feather feather-user-minus">

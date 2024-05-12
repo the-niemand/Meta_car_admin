@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'; // Import axios library for making HTTP requests
 import CurrentDateLogger from '../../../components/Date';
-import addbook from '../../../assets/literature.png';
 import { Link } from 'react-router-dom';
 import Dropdown from '../../../components/subcomponents/dropdown';
 import loadingSpinner from "../../../assets/loading.gif";
@@ -32,7 +31,7 @@ const Dash_Books = () => {
 
 
     useEffect(() => {
-        const fetchBooks = async () => {
+        const fetchCars = async () => {
             try {
                 setLoading(true);
                 const fetchUrl = `${URL}car/fetchCars`;
@@ -42,11 +41,11 @@ const Dash_Books = () => {
                 setLoading(false);
 
             } catch (error) {
-                console.log('Error fetching books:', error);
+                console.log('Error fetching Cars:', error);
                 setLoading(false);
             }
         };
-        fetchBooks();
+        fetchCars();
 
     }, [URL]);
 
@@ -123,11 +122,12 @@ const Dash_Books = () => {
             const response = await axios.delete(fetchUrl);
             if (response) {
                 setMessagedeletion("Car has been deleted")
-                setCarsData(prevBooksData => prevBooksData.filter(carsData => carsData._id !== id));
+                setCarsData(prevCarsData => prevCarsData.filter(carsData => carsData._id !== id));
+                setFilteredCars(prevCarsData => prevCarsData.filter(carsData => carsData._id !== id));
             }
 
         } catch (error) {
-            console.log('Error fetching books:', error);
+            console.log('Error fetching Car:', error);
             setMessagedeletion(error)
         }
     }
@@ -146,7 +146,7 @@ const Dash_Books = () => {
                         <div className="flex flex-col gap-1 items-center" >
                             <div className="flex flex-col gap-2 items-center">
                                 <img src={bin} width={"60"} alt="trash" />
-                                <h1 className="text-[25px] font-Poppins ">Delete User</h1>
+                                <h1 className="text-[25px] font-Poppins ">Delete Car</h1>
                             </div>
 
                             <div>
