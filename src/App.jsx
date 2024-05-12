@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<RedirectToMain />} />
+        <Route exact path="/" element={<RedirectToMain />} />
         <Route path="/Adminpage/*" element={<Dashboard />} />
         <Route path="/Auth" element={<Auth />} />
       </Routes>
