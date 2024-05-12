@@ -14,8 +14,8 @@ const Dashboard = () => {
                <div className='w-screen flex flex-col px-16 py-10 relative'>
                     <Routes>
 
-                         <Route path='/books' element={<Dash_Books />} />
-                         <Route path='/books/Create_Book' element={<Dash_NewBook />} />
+                         <Route path='/cars' element={<Dash_Books />} />
+                         <Route path='/cars/Create_car' element={<Dash_NewBook />} />
 
                          <Route path='/users' element={<Dash_Users />} />
                          <Route path='/users/Create_User' element={<Dash_NewUser />} />

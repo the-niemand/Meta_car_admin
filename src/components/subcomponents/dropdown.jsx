@@ -1,8 +1,13 @@
+import { Select } from "@mui/material";
 import React, { useState, useEffect, useRef } from "react";
 
-const Dropdown = ({ name, dropdownItems }) => {
+const Dropdown = ({ name, dropdownItems , onSelect}) => {
      const [isOpen, setIsOpen] = useState(false);
      const [selected, setSelected] = useState(name);
+
+     useEffect(()=>{
+          onSelect(selected)
+     },[selected])
 
      const dropdownRef = useRef(null);
 
@@ -73,6 +78,7 @@ const Dropdown = ({ name, dropdownItems }) => {
                                    key={index + splitIndex}
                                    onClick={() => {
                                         setSelected(item);
+                                        onSelect(item)
                                         setIsOpen(false); // Close dropdown after selection
                                    }}
                               >

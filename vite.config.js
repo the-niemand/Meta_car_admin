@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base:"/maktabati_client_side/",
+  base:"/",
   plugins: [react()],
   envPrefix : "APP_"
 })

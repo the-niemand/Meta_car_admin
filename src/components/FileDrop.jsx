@@ -41,7 +41,7 @@ const FileDrop = ({ onSelect }) => {
      return (
           <div className="w-full border rounded flex items-center flex-col gap-3 p-5 mb-8">
                <div
-                    className={`cursor-pointer border-dashed border-2 border-yellow-400 rounded bg-yellow-50 hover:bg-yellow-100 transition-all duration-200 w-full h-40 flex justify-center items-center ${isDragover ? 'bg-gray-400 border-gray-700' : ''
+                    className={`cursor-pointer border-dashed border-2 border-[#FF4C30] rounded bg-red-100 hover:bg-red-200 transition-all duration-200 w-full h-40 flex justify-center items-center ${isDragover ? 'bg-gray-400 border-gray-700' : ''
                          }`}
                     onDrop={dropHandler}
                     onDragOver={handleDragOver}
@@ -49,12 +49,12 @@ const FileDrop = ({ onSelect }) => {
                     onClick={handleBrowseClick}
                >
                     {file ? (
-                         <div className="text-yellow-500 text-xl font-bold">{file.name}</div>
+                         <div className="text-[#FF4C30] text-xl font-bold">{file.name}</div>
                     ) : (
                          <div className="flex flex-col items-center justify-center">
-                              <p className="text-yellow-500 text-[16px] font-bold">Drag and Drop File Here</p>
-                              <p className="text-yellow-500 text-[16px] font-bold">OR</p>
-                              <p className="text-yellow-500 text-[16px] font-bold">Click to Browse</p>
+                              <p className="text-[#FF4C30] text-[16px] font-bold">Drag and Drop File Here</p>
+                              <p className="text-[#FF4C30] text-[16px] font-bold">OR</p>
+                              <p className="text-[#FF4C30] text-[16px] font-bold">Click to Browse</p>
                          </div>
                     )}
                     <input
