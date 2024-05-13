@@ -335,8 +335,8 @@ function ModelCard({ handleCarDeletion, modelId, index, modelImg, modelName, mod
     };
 
     return (
-        <div key={index} className='bg-white w-[23%] rounded-xl shadow-md relative'>
-            <div className='relative h-[250px] rounded-t-xl w-full' onMouseEnter={handleHover} onMouseLeave={handleHover}>
+        <div key={index} className='bg-white w-[23%] rounded-xl shadow-md relative overflow-hidden'>
+            <div className='relative h-[250px] w-full' onMouseEnter={handleHover} onMouseLeave={handleHover}>
                 <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.45)', backdropFilte: "blur(10px)", display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: isOnHover ? 1 : 0, visibility: isOnHover ? 'visible' : 'hidden', transition: 'opacity 0.3s ease, visibility 0.3s ease' }}>
                     <div className='flex gap-6'>
                         <Link to={`Update_Car/${modelId}`} >
