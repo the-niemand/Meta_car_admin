@@ -1,4 +1,3 @@
-import { Select } from "@mui/material";
 import React, { useState, useEffect, useRef } from "react";
 
 const Dropdown = ({ name, dropdownItems , onSelect}) => {
@@ -34,7 +33,7 @@ const Dropdown = ({ name, dropdownItems , onSelect}) => {
      const splitIndex = 4;
 
      return (
-          <div className="relative" ref={dropdownRef}>
+          <div className="relative z-50" ref={dropdownRef}>
                <button
                     className="bg-white shadow-search text-zinc-800 font-bold py-2 px-4 rounded inline-flex items-center"
                     onClick={toggleDropdown}
