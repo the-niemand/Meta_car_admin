@@ -229,53 +229,8 @@ const TableData = ({ data }) => {
   }
 
 
-  const handleActions = (action) => {
-    if (action === "reset") {
-      return (
-
-        <div className="flex flex-col gap-3 items-center justify-center">
-          <div className="absolute top-2 right-2" onClick={handleClose} >
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#282828" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className=" opacity-50 cursor-pointer hover:opacity-100 transition ease-out duration-150"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </div>
-          <div className="flex flex-col gap-1 items-center">
-            <div className="flex items-center gap-2 w-full">
-              <div className="w-full border rounded flex items-center pr-3">
-                <input
-                  className="shadow appearance-none rounded w-full p-3 text-gray-700 leading-tight focus:outline-none focus:ring-0 focus:border-gray-600  focus:shadow-outline"
-                  id="password"
-                  placeholder="New password..."
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  autoComplete="new-password"
-                />
-                <div className='flex gap-4'>
-                  <img src={generateIcon} className="cursor-pointer w-5 h-5 opacity-40 hover:opacity-100 transition ease-out duration-150" alt="generate-icon" onClick={handlePasswordGeneration} />
-                </div>
-              </div>
-              <div className=" transition ease-out duration-200 cursor-pointer opacity-60 hover:opacity-100 p-3 bg-gray-300 rounded" onClick={CopyPassword}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-              </div>
-
-            </div>
-            <div
-              className={color}
-              style={{ visibility: Messagepassword ? 'visible' : 'hidden' }}
-            >
-              {Messagepassword}
-            </div>
-          </div>
-
-
-          <div>
-            <button className="w-fit px-10 border-2 border-green-600 bg-green-600 text-white py-1.5   rounded-md hover:bg-transparent hover:text-green-600 font-semibold transition ease-out duration-250" onClick={handlePasswordReset}>
-              save
-            </button>
-          </div>
-        </div>
-      );
-    }
-    if (action === 'delete') {
+  const handleActions = () => {
+    if (action == 'delete') {
       return (
         <div className="flex flex-col gap-3 items-center justify-center">
           <div className="absolute top-2 right-2" onClick={handleClose} >
@@ -326,7 +281,7 @@ const TableData = ({ data }) => {
   return (
     <div className="flex flex-col gap-6 mt-6">
 
-      {action && (
+      {action == "delete" && (
         <div className=" z-20 fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-md flex items-center justify-center">
           <div className="w-fit bg-white pt-14 pb-8 px-5 rounded flex flex-col items-center justify-center relative" >
             {handleActions()}

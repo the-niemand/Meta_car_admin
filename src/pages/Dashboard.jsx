@@ -6,6 +6,7 @@ import Dash_Users from './Dashboard_pages/Dash_user/Dash_Users';
 import Dash_NewBook from './Dashboard_pages/Dash_book/Dash_NewBook';
 import Dash_NewUser from './Dashboard_pages/Dash_user/Dash_NewUser';
 import Dash_UpdateUser from './Dashboard_pages/Dash_user/Dash_UpdateUser';
+import Dash_UpdateCar from './Dashboard_pages/Dash_book/Dash_UpdateCar';
 
 const Dashboard = () => {
      return (
@@ -16,6 +17,7 @@ const Dashboard = () => {
 
                          <Route path='/cars' element={<Dash_Books />} />
                          <Route path='/cars/Create_car' element={<Dash_NewBook />} />
+                         <Route path='/cars/Update_Car/:id' element={<Dash_UpdateCar />} />
 
                          <Route path='/users' element={<Dash_Users />} />
                          <Route path='/users/Create_User' element={<Dash_NewUser />} />

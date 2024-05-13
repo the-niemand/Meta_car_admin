@@ -32,6 +32,7 @@ const Dash_NewBook = () => {
           image: null,
      });
 
+
      useEffect(() => {
           if (selectedImage) {
                const renamedImageName = Date.now() + "_" + selectedImage.name;
@@ -51,7 +52,7 @@ const Dash_NewBook = () => {
 
           handleCreationSuccess();
 
-     }, [selectedImage, , creatingStatus]);
+     }, [selectedImage,creatingStatus]);
 
      const handleChange = (e) => {
           setFormData({
@@ -146,6 +147,7 @@ const Dash_NewBook = () => {
                               <div className="text-base font-bold font-['DM Sans'] text-white mr-2">Back</div>
                          </Link>
                     </div>
+
                     <div className='flex justify-center items-center mt-10 w-full'>
                          <div className='bg-white shadow-search rounded p-16 w-2/4'>
                               <form onSubmit={handleSubmit}>
@@ -223,7 +225,7 @@ const Dash_NewBook = () => {
                                    </div>
 
 
-                                   <FileDrop onSelect={handleImageSelect} /> {/* FileDrop component to select image */}
+                                   <FileDrop onSelect={handleImageSelect} />
                                    <div className="w-full">
                                         <button onClick={handleCreatingCar} className='w-full px-6 border-2 border-[#FF4C30] bg-[#FF4C30] text-white py-1.5 rounded-md hover:bg-transparent hover:text-[#FF4C30] font-semibold transition ease-out duration-250'>
                                              Create
@@ -267,7 +269,11 @@ const Dash_NewBook = () => {
      );
 };
 
-export const Dropdown = ({ name, dropdownItems, onSelect }) => {
+
+
+
+export const Dropdown = ({ name , dropdownItems, onSelect }) => {
+
      const [isOpen, setIsOpen] = useState(false);
      const [selected, setSelected] = useState(name);
      const dropdownRef = useRef(null);
@@ -289,6 +295,7 @@ export const Dropdown = ({ name, dropdownItems, onSelect }) => {
                document.removeEventListener("mousedown", handleOutsideClick);
           };
      }, []);
+
 
      return (
           <div className="relative w-full" ref={dropdownRef}>

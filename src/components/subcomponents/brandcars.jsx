@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const Brandcars = ({ onSelect }) => {
+const Brandcars = ({ onSelect, Brandvalue }) => {
      const carsBrand = [
           "Abarth",
           "Alfa Romeo",
@@ -43,6 +43,7 @@ const Brandcars = ({ onSelect }) => {
           "Maybach",
           "Mazda",
           "McLaren",
+          "Mercedes",
           "Mercedes-Benz",
           "MG",
           "Mini",
@@ -67,8 +68,10 @@ const Brandcars = ({ onSelect }) => {
           "Volkswagen",
           "Volvo"
      ];
-     const [brand, setBrand] = useState('');
+
+     const [brand, setBrand] = useState(Brandvalue || "");
      const [isOpen, setIsOpen] = useState(false);
+
 
      const handleChange = (e) => {
           const value = e.target.value;
@@ -89,11 +92,7 @@ const Brandcars = ({ onSelect }) => {
           return [];
      };
 
-     useEffect(() => {
-          if (brand) {
-               onSelect(brand)
-          }
-     }, [brand])
+
 
      return (
           <div className='flex flex-col gap-2 mb-4'>
@@ -112,6 +111,7 @@ const Brandcars = ({ onSelect }) => {
                                    key={index}
                                    onClick={() => {
                                         setBrand(item);
+                                        onSelect(item);
                                         setIsOpen(false);
                                    }}
                               >
@@ -121,6 +121,7 @@ const Brandcars = ({ onSelect }) => {
 
                          <li className="cursor-pointer hover:bg-gray-200 rounded py-2 px-4 truncate w-full" onClick={() => {
                               setBrand("other");
+                              onSelect("other");
                               setIsOpen(false);
                          }}>
                               Other...

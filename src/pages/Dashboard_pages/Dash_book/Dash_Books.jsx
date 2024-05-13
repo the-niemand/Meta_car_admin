@@ -18,7 +18,6 @@ const Dash_Books = () => {
     const [action, setAction] = useState(null);
     const [target, setTarget] = useState(null);
     const [Messagedeletion, setMessagedeletion] = useState('');
-    const [test, setTest] = useState(true);
 
     const [sortBy, setSortby] = useState("none")
     const [type, setType] = useState("both")
@@ -258,6 +257,7 @@ const Dash_Books = () => {
                                 placeholder="Search..."
                                 className="text-base border-none outline-none focus:ring-0 w-full rounded-md"
                                 value={searchFieldValue}
+                                id="search"
                                 onChange={handleSearchFieldValue}
                             />
                         </div>
@@ -328,9 +328,30 @@ const Dash_Books = () => {
 
 function ModelCard({ handleCarDeletion, modelId, index, modelImg, modelName, modelComp, modelTrans, modelP, modelDoor, modelColor, modelMetre }) {
 
+    const [isOnHover, setOnHover] = useState(false);
+
+    const handleHover = () => {
+        setOnHover(!isOnHover);
+    };
+
     return (
-        <div key={index} className='bg-white w-[23%] rounded-xl shadow-md'>
-            <img src={modelImg} className='object-cover h-[250px] rounded-t-xl w-full' alt="" />
+        <div key={index} className='bg-white w-[23%] rounded-xl shadow-md relative'>
+            <div className='relative h-[250px] rounded-t-xl w-full' onMouseEnter={handleHover} onMouseLeave={handleHover}>
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.45)', backdropFilte: "blur(10px)", display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: isOnHover ? 1 : 0, visibility: isOnHover ? 'visible' : 'hidden', transition: 'opacity 0.3s ease, visibility 0.3s ease' }}>
+                    <div className='flex gap-6'>
+                        <Link to={`Update_Car/${modelId}`} >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className=" transition ease-out duration-200 cursor-pointer opacity-60 hover:opacity-100 feather feather-edit">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </Link>
+                        <div onClick={() => { handleCarDeletion(modelId) }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition ease-out duration-200 cursor-pointer opacity-60 hover:opacity-100"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                        </div>
+                    </div>
+                </div>
+                <img src={modelImg} className='object-cover w-full h-full' />
+            </div>
 
             <div className='p-5 px-6 flex flex-col gap-3'>
                 <span className='flex justify-between items-center'>
@@ -349,14 +370,11 @@ function ModelCard({ handleCarDeletion, modelId, index, modelImg, modelName, mod
                     <span className='font-[500] text-darkish  flex gap-3 items-center'>{modelTrans} </span>
                     <span className=' flex gap-3 items-center text-darkish'>{modelColor} </span>
                 </span>
-                <div className='flex gap-3'>
-                    <button className='w-fit bg-blue-600 rounded-sm text-white text-[15px] px-3 py-2 font-bold opacity-70 hover:opacity-100 transition ease-out duration-200'>Update</button>
-                    <button className='w-fit bg-red-600 rounded-sm text-white text-[15px] px-3 py-2 font-bold opacity-70 hover:opacity-100 transition ease-out duration-200' onClick={() => { handleCarDeletion(modelId) }}>delete</button>
-                </div>
             </div>
         </div>
-    )
+    );
 }
+
 
 
 export default Dash_Books;

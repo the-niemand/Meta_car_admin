@@ -34,7 +34,6 @@ const FileDrop = ({ onSelect }) => {
      };
 
      const handleBrowseClick = () => {
-          // Trigger click on the file input element
           fileInputRef.current.click();
      };
 
