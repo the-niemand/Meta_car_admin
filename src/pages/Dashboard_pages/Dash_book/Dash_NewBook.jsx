@@ -29,7 +29,6 @@ const Dash_NewBook = () => {
           price: '',
           size: '',
           color: 'silver',
-          image: null,
      });
 
 
@@ -37,10 +36,6 @@ const Dash_NewBook = () => {
           if (selectedImage) {
                const renamedImageName = Date.now() + "_" + selectedImage.name;
                setImageName(renamedImageName);
-               setFormData(prevFormData => ({
-                    ...prevFormData,
-                    image: renamedImageName,
-               }));
           }
 
           const handleCreationSuccess = async () => {
