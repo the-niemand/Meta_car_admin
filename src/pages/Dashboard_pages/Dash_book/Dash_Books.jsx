@@ -212,7 +212,7 @@ const Dash_Books = () => {
         <>
 
             {action && (
-                <div className=" z-20 fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-md flex items-center justify-center">
+                <div className="fixed z-50 top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-md flex items-center justify-center">
                     <div className="w-fit bg-white pt-14 pb-8 px-5 rounded flex flex-col items-center justify-center relative" >
                         {handleActions()}
                     </div>
@@ -301,7 +301,7 @@ const Dash_Books = () => {
                             <ModelCard
                                 key={index}
                                 modelMetre={car.kilometers}
-                                modelImg={`${URL}${car.image}`}
+                                modelImg={car.image}
                                 modelName={car.title}
                                 modelComp={car.brand}
                                 modelTrans={car.type}

@@ -68,7 +68,7 @@ const FileDrop = ({ onSelect }) => {
 
                {file && (
                     <div className="w-full px-5 py-1 flex justify-between items-center border rounded">
-                         <div>{file.name}</div>
+                         <div className='w-[300px] truncate'>{file.name}</div>
                          <div
                               className="h-8 w-8 rounded-sm flex items-center justify-center cursor-pointer"
                               onClick={deleteFile}

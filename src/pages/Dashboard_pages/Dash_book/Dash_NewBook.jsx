@@ -221,6 +221,7 @@ const Dash_NewBook = () => {
 
 
                                    <FileDrop onSelect={handleImageSelect} />
+                                   
                                    <div className="w-full">
                                         <button onClick={handleCreatingCar} className='w-full px-6 border-2 border-[#FF4C30] bg-[#FF4C30] text-white py-1.5 rounded-md hover:bg-transparent hover:text-[#FF4C30] font-semibold transition ease-out duration-250'>
                                              Create
